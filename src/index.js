@@ -6,3 +6,6 @@ elementClosest(window);
 import 'formdata-polyfill';
 import 'es6-promise';
 import 'fetch-polyfill';
+
+import phone from './modules/phone';
+phone();
