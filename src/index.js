@@ -10,7 +10,9 @@ import 'fetch-polyfill';
 import phone from './modules/phone';
 import popupBurgerMenu from './modules/popupBurgerMenu';
 import popupPolicy from './modules/popupPolicy';
+import popupRepairTypes from './modules/popupRepairTypes';
 
 phone();
 popupBurgerMenu();
 popupPolicy();
+popupRepairTypes();
