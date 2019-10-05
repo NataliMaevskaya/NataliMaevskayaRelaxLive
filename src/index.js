@@ -8,4 +8,7 @@ import 'es6-promise';
 import 'fetch-polyfill';
 
 import phone from './modules/phone';
+import popupBurgerMenu from './modules/popupBurgerMenu';
+
 phone();
+popupBurgerMenu();
