@@ -1,0 +1,15 @@
+const popupPolicy = () => {
+    const body = document.querySelector('body'),
+          popupPrivacy = document.querySelector('.popup-privacy');
+
+          body.addEventListener('click', (event) => {
+            let target = event.target;
+            if (target.matches('.link-privacy')) {
+                popupPrivacy.style.cssText = `visibility: visible !important`;      
+            }
+            if (target.closest('.close')) {
+                popupPrivacy.removeAttribute('style');
+            }
+          });
+};
+export default popupPolicy;

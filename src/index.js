@@ -9,6 +9,8 @@ import 'fetch-polyfill';
 
 import phone from './modules/phone';
 import popupBurgerMenu from './modules/popupBurgerMenu';
+import popupPolicy from './modules/popupPolicy';
 
 phone();
 popupBurgerMenu();
+popupPolicy();
