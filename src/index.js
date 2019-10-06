@@ -12,9 +12,12 @@ import popupBurgerMenu from './modules/popupBurgerMenu';
 import popupPolicy from './modules/popupPolicy';
 import popupRepairTypes from './modules/popupRepairTypes';
 import scrollToId from './modules/scrollToId';
+import popupConsult from './modules/popupConsult';
 
 phone();
 popupBurgerMenu();
-popupPolicy();
+
 popupRepairTypes();
 scrollToId();
+popupConsult();
+popupPolicy();

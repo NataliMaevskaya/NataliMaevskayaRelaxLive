@@ -6,8 +6,7 @@ const popupPolicy = () => {
             let target = event.target;
             if (target.matches('.link-privacy')) {
                 popupPrivacy.style.cssText = `visibility: visible !important`;      
-            }
-            if (target.closest('.close')) {
+            } else if (popupPrivacy.getAttribute('style') && (target.closest('.close') || !target.closest('.popup-dialog-privacy'))) {
                 popupPrivacy.removeAttribute('style');
             }
           });
