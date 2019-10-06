@@ -13,11 +13,14 @@ import popupPolicy from './modules/popupPolicy';
 import popupRepairTypes from './modules/popupRepairTypes';
 import scrollToId from './modules/scrollToId';
 import popupConsult from './modules/popupConsult';
+import accordionQuestion from './modules/accordionQuestion';
 
 phone();
 popupBurgerMenu();
-
 popupRepairTypes();
 scrollToId();
+
 popupConsult();
 popupPolicy();
+
+accordionQuestion();
