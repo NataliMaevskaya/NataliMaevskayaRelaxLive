@@ -14,6 +14,7 @@ import popupRepairTypes from './modules/popupRepairTypes';
 import scrollToId from './modules/scrollToId';
 import popupConsult from './modules/popupConsult';
 import accordionQuestion from './modules/accordionQuestion';
+import SliderCarousel from './modules/SliderCarousel';
 
 phone();
 popupBurgerMenu();
@@ -24,3 +25,31 @@ popupConsult();
 popupPolicy();
 
 accordionQuestion();
+
+const partnersBlock = document.querySelector('.partners'),
+    mainBlock = partnersBlock.querySelector('.wrapper');
+    mainBlock.classList.add('partners-main');
+const options = {
+    main: '.partners-main',
+    wrap: '.partners-slider',
+    prev: '#partners-arrow_left',
+    next: '#partners-arrow_right',
+    // slidesToShow: 3,
+    infinity: true,
+
+    responsive: [
+        {
+        breakpoint: 1024,
+        slidesToShow: 3
+    },
+    {
+        breakpoint: 768,
+        slidesToShow: 2
+    },
+    {
+        breakpoint: 576,
+        slidesToShow: 1
+    }]
+ };
+const carousel = new SliderCarousel(options);
+carousel.init();
