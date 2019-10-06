@@ -11,8 +11,10 @@ import phone from './modules/phone';
 import popupBurgerMenu from './modules/popupBurgerMenu';
 import popupPolicy from './modules/popupPolicy';
 import popupRepairTypes from './modules/popupRepairTypes';
+import scrollToId from './modules/scrollToId';
 
 phone();
 popupBurgerMenu();
 popupPolicy();
 popupRepairTypes();
+scrollToId();
