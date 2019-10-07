@@ -36,6 +36,11 @@ const options = {
     next: '#partners-arrow_right',
     // slidesToShow: 3,
     infinity: true,
+    addClass: {
+        mainClass: 'glo-slider',
+        wrapClass: 'glo-slider__wrap',
+        itemClass: 'glo-slider__item'
+    },
 
     responsive: [
         {

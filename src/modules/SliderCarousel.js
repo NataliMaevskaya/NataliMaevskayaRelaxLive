@@ -8,7 +8,8 @@ class SliderCarousel {
         infinity = false,
         position = 0,
         slidesToShow = 3,
-        responsive = []
+        responsive = [],
+        addClass = {}
     }) {
         if (!main || !wrap) {
             console.warn(`slider-cerousel: необходимо 2 свойства, 'main' и 'wrap'`);
@@ -26,12 +27,13 @@ class SliderCarousel {
             // maxPosition: this.slides.length - this.slidesToShow
         };
         this.responsive = responsive;
+        this.addClass = addClass;
     }
 
     init() {
 
         this.addGloClass();
-        this.addStyle();
+        // this.addStyle();
         if (this.prev && this.next) {
             this.controlSlider();
         } else {
@@ -45,51 +47,58 @@ class SliderCarousel {
     }
 
     addGloClass() {
-        this.main.classList.add('glo-slider');
-        this.wrap.classList.add('glo-slider__wrap');
-        for (const item of this.slides) {
-            item.classList.add('glo-slider__item');
-        }
+        if (Object.keys(this.addClass).length !== 0) {        
+            const {mainClass, wrapClass, itemClass} = this.addClass;
+            this.main.classList.add(mainClass);
+            this.wrap.classList.add(wrapClass);
+            for (const item of this.slides) {
+                item.classList.add(itemClass);
+            }
+        // console.log(mainClass);
+        // console.log(wrapClass);
+        // console.log(itemClass);
+        } 
     }
 
-    addStyle() {
-        let style = document.getElementById('sliderCarousel-style');
-        if (!style){
-            style = document.createElement('style');
-            style.id = 'sliderCarousel-style';
-        }
-        let maxWidth;
-        switch (this.slidesToShow) {
-            case 1:
-                maxWidth = 300;
-                break;
-            case 2: 
-                maxWidth = 600;
-                break;
-            case 3:
-                maxWidth = 900;
-                break;
-        }
-        style.textContent = `
-            .glo-slider {
-                overflow: hidden !important;
-            }
-            .glo-slider__wrap {
-                display: flex !important;
-                transition: transform 0.5s !important;
-                will-change: transform !important;
-            }
-            .glo-slider__item {
-                display: flex !important;
-                align-items: center;
-                justify-content: center;
-                max-width: ${maxWidth}px !important;
-                flex: 0 0 ${this.options.widthSlide}% !important;
-                margin: auto 0 !important;
-            }
-        `;
-        document.head.appendChild(style);
-    }
+    // addStyle() {
+        // let style = document.getElementById('sliderCarousel-style');
+        // if (!style){
+        //     style = document.createElement('style');
+        //     style.id = 'sliderCarousel-style';
+        // }
+        // let maxWidth;
+        // switch (this.slidesToShow) {
+        //     case 1:
+        //         maxWidth = 300;
+        //         break;
+        //     case 2: 
+        //         maxWidth = 600;
+        //         break;
+        //     case 3:
+        //         maxWidth = 900;
+        //         break;
+
+        // }
+        // style.textContent = `
+        //     .glo-slider {
+        //         overflow: hidden !important;
+        //     }
+        //     .glo-slider__wrap {
+        //         display: flex !important;
+        //         transition: transform 0.5s !important;
+        //         will-change: transform !important;
+        //     }
+        //     .glo-slider__item {
+        //         /*display: flex !important;*/
+        //         /*align-items: center !important;*/
+        //         /*justify-content: center !important;*/
+        //         max-width: ${maxWidth}px !important;
+        //         flex: 0 0 ${this.options.widthSlide}% !important;
+        //         /*margin: auto 0 !important;*/
+        //     }
+        // `;
+        // document.head.appendChild(style);
+    // }
     controlSlider() {
         this.prev.addEventListener('click', this.prevSlider.bind(this));
         this.next.addEventListener('click', this.nextSlider.bind(this));
@@ -172,7 +181,7 @@ class SliderCarousel {
 
         const widthSlideAddStyle = () => {
             this.options.widthSlide = Math.floor(100 / this.slidesToShow);
-            this.addStyle();
+            // this.addStyle();
         };
 
         checkResponse();
