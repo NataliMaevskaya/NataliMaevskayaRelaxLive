@@ -48,57 +48,32 @@ class SliderCarousel {
 
     addGloClass() {
         if (Object.keys(this.addClass).length !== 0) {        
-            const {mainClass, wrapClass, itemClass} = this.addClass;
-            this.main.classList.add(mainClass);
-            this.wrap.classList.add(wrapClass);
+            const {mainClassName, wrapClassName, itemClassName} = this.addClass;
+            this.main.classList.add(mainClassName);
+            this.wrap.classList.add(wrapClassName);
             for (const item of this.slides) {
-                item.classList.add(itemClass);
+                item.classList.add(itemClassName);
             }
+            if(this.wrap.matches('.glo-reviews-slider__wrap')) {
+                this.gloClassItemAddDelete('glo-reviews-slider__item', 0);
+            }
+            
         // console.log(mainClass);
         // console.log(wrapClass);
         // console.log(itemClass);
         } 
     }
-
-    // addStyle() {
-        // let style = document.getElementById('sliderCarousel-style');
-        // if (!style){
-        //     style = document.createElement('style');
-        //     style.id = 'sliderCarousel-style';
-        // }
-        // let maxWidth;
-        // switch (this.slidesToShow) {
-        //     case 1:
-        //         maxWidth = 300;
-        //         break;
-        //     case 2: 
-        //         maxWidth = 600;
-        //         break;
-        //     case 3:
-        //         maxWidth = 900;
-        //         break;
-
-        // }
-        // style.textContent = `
-        //     .glo-slider {
-        //         overflow: hidden !important;
-        //     }
-        //     .glo-slider__wrap {
-        //         display: flex !important;
-        //         transition: transform 0.5s !important;
-        //         will-change: transform !important;
-        //     }
-        //     .glo-slider__item {
-        //         /*display: flex !important;*/
-        //         /*align-items: center !important;*/
-        //         /*justify-content: center !important;*/
-        //         max-width: ${maxWidth}px !important;
-        //         flex: 0 0 ${this.options.widthSlide}% !important;
-        //         /*margin: auto 0 !important;*/
-        //     }
-        // `;
-        // document.head.appendChild(style);
-    // }
+    gloClassItemAddDelete(itemClassName, index) {
+        for (let i = 0; i < this.slides.length; i++) {
+            if (i === index) {
+                (this.slides[i]).classList.add(itemClassName);
+                (this.slides[i]).classList.remove('hidden__item');
+            } else {
+                (this.slides[i]).classList.remove(itemClassName);
+                (this.slides[i]).classList.add('hidden__item');
+            }
+        }
+    }
     controlSlider() {
         this.prev.addEventListener('click', this.prevSlider.bind(this));
         this.next.addEventListener('click', this.nextSlider.bind(this));
@@ -110,6 +85,9 @@ class SliderCarousel {
                 this.options.position = this.slides.length - this.slidesToShow;
             }
             this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
+            if (this.wrap.matches('.glo-reviews-slider__wrap')) {
+                this.gloClassItemAddDelete('glo-reviews-slider__item', this.options.position);
+            }
         }
     }
 
@@ -120,6 +98,9 @@ class SliderCarousel {
                 this.options.position = 0;
             }
             this.wrap.style.transform = `translateX(-${this.options.position * this.options.widthSlide}%)`;
+            if (this.wrap.matches('.glo-reviews-slider__wrap')) {
+                this.gloClassItemAddDelete('glo-reviews-slider__item', this.options.position);
+            }
         }
     }
 

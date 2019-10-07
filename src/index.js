@@ -37,9 +37,9 @@ const options = {
     // slidesToShow: 3,
     infinity: true,
     addClass: {
-        mainClass: 'glo-slider',
-        wrapClass: 'glo-slider__wrap',
-        itemClass: 'glo-slider__item'
+        mainClassName: 'glo-slider',
+        wrapClassName: 'glo-slider__wrap',
+        itemClassName: 'glo-slider__item'
     },
 
     responsive: [
@@ -58,3 +58,19 @@ const options = {
  };
 const carousel = new SliderCarousel(options);
 carousel.init();
+const options3 = {
+    main: '.reviews-slider-wrap',
+    wrap: '.reviews-slider',
+    prev: '#reviews-arrow_left',
+    next: '#reviews-arrow_right',
+    slidesToShow: 1,
+    infinity: true,
+
+    addClass: {
+    mainClassName: 'glo-reviews-slider',
+    wrapClassName: 'glo-reviews-slider__wrap',
+    itemClassName: 'glo-reviews-slider__item'
+    }
+ };
+const carousel3 = new SliderCarousel(options3);
+carousel3.init();

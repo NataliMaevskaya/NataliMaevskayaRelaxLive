@@ -40,3 +40,21 @@
             margin-right: auto; }*/ }
       .glo-slider__item div {
         min-height: 100%; }
+        .glo-reviews-slider {
+          /* overflow: hidden !important; */
+          margin-top: 65px;
+      }
+      
+.glo-reviews-slider__wrap {
+    overflow: visible  !important;
+    display: flex !important;
+    transition: transform 0.7s !important;
+    will-change: transform !important;
+}
+.glo-reviews-slider__item {
+    visibility: visible !important;
+    flex: 0 0 100% !important;
+}
+.hidden__item {
+    visibility: hidden !important;
+}
