@@ -55,6 +55,22 @@
     visibility: visible !important;
     flex: 0 0 100% !important;
 }
+.visible__item {
+  visibility: visible !important;
+}
 .hidden__item {
-    visibility: hidden !important;
+  visibility: hidden !important;
+}
+
+.position-absolute__item {
+position: absolute !important;
+}
+.position-index_1 {
+z-index: 1;
+}
+.position-index_2 {
+z-index: -1;
+}
+.display-flex {
+display: flex !important;
 }

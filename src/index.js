@@ -9,20 +9,46 @@ import 'fetch-polyfill';
 
 import phone from './modules/phone';
 import popupBurgerMenu from './modules/popupBurgerMenu';
-import popupPolicy from './modules/popupPolicy';
 import popupRepairTypes from './modules/popupRepairTypes';
 import scrollToId from './modules/scrollToId';
 import popupConsult from './modules/popupConsult';
+import popupPolicy from './modules/popupPolicy';
 import accordionQuestion from './modules/accordionQuestion';
 import SliderCarousel from './modules/SliderCarousel';
+import sendFormCall from './modules/sendFormCall';
+// import clearFieldsForm from './modules/clearFieldsForm';
+
+
 
 phone();
 popupBurgerMenu();
 popupRepairTypes();
 scrollToId();
 
+
+
+
+    
+
+
 popupConsult();
 popupPolicy();
+sendFormCall('feedback1');
+sendFormCall('feedback2');
+sendFormCall('feedback3');
+sendFormCall('feedback4');
+sendFormCall('feedback5');
+sendFormCall('feedback6');
+
+// const popupThank = document.querySelector('.popup-thank');
+//     popupThank.addEventListener('click', (event) => {
+//         let target = event.target;
+//         // 
+//         if (popupThank.matches('.visible__item') &&
+//             (target.closest('.close-thank') || !target.closest('.popup-thank-bg'))) {
+//             popupThank.classList.remove('visible__item');
+//         }
+//     });
 
 accordionQuestion();
 
@@ -74,3 +100,5 @@ const options3 = {
  };
 const carousel3 = new SliderCarousel(options3);
 carousel3.init();
+
+

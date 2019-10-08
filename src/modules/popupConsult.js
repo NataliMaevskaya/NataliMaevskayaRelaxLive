@@ -1,7 +1,12 @@
+import clearFieldsForm from "./clearFieldsForm";
+
 const popupConsult = () => {
     const body = document.querySelector('body'),
         popupPrivacy = document.querySelector('.popup-privacy'),
-        popupConsult = document.querySelector('.popup-consultation');
+        popupConsult = document.querySelector('.popup-consultation'),
+        form = popupConsult.querySelector('form');
+        // form = document.getElementById('feedback6');
+        console.log(form);
 
     body.addEventListener('click', (event) => {
         let target = event.target;
@@ -10,7 +15,9 @@ const popupConsult = () => {
         } else if(!popupPrivacy.getAttribute('style')) {
             if (target.closest('.close-consultation') || !target.closest('.feedback-wrap')) {
                 if (popupConsult.getAttribute('style')) {
+                    clearFieldsForm(form);
                     popupConsult.removeAttribute('style');
+                    
                 }
             }
         }
