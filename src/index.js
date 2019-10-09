@@ -17,20 +17,16 @@ import accordionQuestion from './modules/accordionQuestion';
 import SliderCarousel from './modules/SliderCarousel';
 import sendFormCall from './modules/sendFormCall';
 import maskPhone from "./modules/maskPhone";
+import schemeTabs from './modules/schemeTabs';
 // import clearFieldsForm from './modules/clearFieldsForm';
 
 
+schemeTabs();
 maskPhone();
 phone();
 popupBurgerMenu();
 popupRepairTypes();
 scrollToId();
-
-
-
-
-    
-
 
 popupConsult();
 popupPolicy();
