@@ -16,10 +16,11 @@ import popupPolicy from './modules/popupPolicy';
 import accordionQuestion from './modules/accordionQuestion';
 import SliderCarousel from './modules/SliderCarousel';
 import sendFormCall from './modules/sendFormCall';
+import maskPhone from "./modules/maskPhone";
 // import clearFieldsForm from './modules/clearFieldsForm';
 
 
-
+maskPhone();
 phone();
 popupBurgerMenu();
 popupRepairTypes();
