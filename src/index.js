@@ -20,9 +20,12 @@ import maskPhone from "./modules/maskPhone";
 import schemeTabs from './modules/schemeTabs';
 import sliderDocs from './modules/sliderDocs';
 import sliderTypesRepair from './modules/sliderTypesRepair';
+import sliderDesigns from './modules/sliderDesigns';
+
 
 sliderDocs();
 sliderTypesRepair();
+sliderDesigns();
 
 
 schemeTabs();
