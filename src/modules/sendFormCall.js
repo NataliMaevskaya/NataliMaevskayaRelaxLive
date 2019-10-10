@@ -1,7 +1,7 @@
-// import clearFieldsForm from './clearFieldsForm';
+import clearFieldsForm from "./clearFieldsForm";
 const sendFormCall = (idForm) => {
     const form = document.getElementById(idForm);
-    // const popupThank = document.querySelector('.popup-thank');
+    const popupThank = document.querySelector('.popup-thank');
     
     //событие submit на форме
     form.addEventListener('submit', (event) => {
@@ -15,12 +15,13 @@ const sendFormCall = (idForm) => {
         const isEmpty = (elementsForm) => {
             let numOfEmpty = 0;
             elementsForm.forEach((elem, i) => {
-                if(elem.value === '') {
+                if (elem.matches('.checkbox__input')){ 
+                    if(!(elem.checked)) {
+                        numOfEmpty++;
+                    }
+                } else if (elem.value === ''){
                     numOfEmpty++;
                 }
-                if (elem.matches('.checkbox__input') && !(elem.checked)) {
-                    numOfEmpty++;
-                } 
             });
             
             if (numOfEmpty) {
@@ -43,11 +44,8 @@ const sendFormCall = (idForm) => {
                 .then((response) => {
                     if (response.status !== 200) {
                         throw new Error('status network is not 200!');
-                    }
-                    
-                    // popupThank.classList.add('visible__item');
-                    
-                    // statusMessage.textContent = successMessage;
+                    }                    
+                    popupThank.classList.add('visible__item');
                 })
                 .catch((err) => {
                     console.error(err);
@@ -65,17 +63,16 @@ const sendFormCall = (idForm) => {
             cache: 'default',
             body: JSON.stringify(body)
         });        
-    };
-    const clearFieldsForm = (form) => {
-        for (const elem of form.elements) {
-            if (elem.tagName.toLowerCase() !== 'button' && elem.type !== 'button') {
-                elem.value = '';
-                if (elem.matches('.checkbox__input')) {
-                            elem.checked = false;
-                        }
-            }
+    };    
+    
+    popupThank.addEventListener('click', (event) => {
+        let target = event.target;
+        
+        if (popupThank.matches('.visible__item') &&
+            (target.closest('.close-thank') || !target.closest('.popup-thank-bg'))) {
+            popupThank.classList.remove('visible__item');
         }
-    };
+    });
 };
 
 export default sendFormCall;

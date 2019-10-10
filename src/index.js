@@ -18,7 +18,11 @@ import SliderCarousel from './modules/SliderCarousel';
 import sendFormCall from './modules/sendFormCall';
 import maskPhone from "./modules/maskPhone";
 import schemeTabs from './modules/schemeTabs';
-// import clearFieldsForm from './modules/clearFieldsForm';
+import sliderDocs from './modules/sliderDocs';
+import sliderTypesRepair from './modules/sliderTypesRepair';
+
+sliderDocs();
+sliderTypesRepair();
 
 
 schemeTabs();
@@ -36,16 +40,6 @@ sendFormCall('feedback3');
 sendFormCall('feedback4');
 sendFormCall('feedback5');
 sendFormCall('feedback6');
-
-// const popupThank = document.querySelector('.popup-thank');
-//     popupThank.addEventListener('click', (event) => {
-//         let target = event.target;
-//         // 
-//         if (popupThank.matches('.visible__item') &&
-//             (target.closest('.close-thank') || !target.closest('.popup-thank-bg'))) {
-//             popupThank.classList.remove('visible__item');
-//         }
-//     });
 
 accordionQuestion();
 
