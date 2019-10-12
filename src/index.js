@@ -22,6 +22,7 @@ import sliderDocs from './modules/sliderDocs';
 import sliderTypesRepair from './modules/sliderTypesRepair';
 import sliderDesigns from './modules/sliderDesigns';
 import getRepairPriceListJSON from './modules/getRepairPriceListJSON';
+import portfolioSlider from './modules/portfolioSlider';
 
 
 getRepairPriceListJSON();
@@ -29,7 +30,7 @@ getRepairPriceListJSON();
 sliderDocs();
 sliderTypesRepair();
 sliderDesigns();
-
+portfolioSlider();
 
 schemeTabs();
 maskPhone();
