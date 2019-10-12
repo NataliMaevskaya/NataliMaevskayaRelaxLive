@@ -21,9 +21,10 @@ import schemeTabs from './modules/schemeTabs';
 import sliderDocs from './modules/sliderDocs';
 import sliderTypesRepair from './modules/sliderTypesRepair';
 import sliderDesigns from './modules/sliderDesigns';
+import getRepairPriceListJSON from './modules/getRepairPriceListJSON';
 
 
-
+getRepairPriceListJSON();
 
 sliderDocs();
 sliderTypesRepair();
