@@ -23,6 +23,8 @@ import sliderTypesRepair from './modules/sliderTypesRepair';
 import sliderDesigns from './modules/sliderDesigns';
 
 
+
+
 sliderDocs();
 sliderTypesRepair();
 sliderDesigns();

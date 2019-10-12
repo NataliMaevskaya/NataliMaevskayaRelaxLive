@@ -339,7 +339,7 @@ const sliderDesigns = () => {
                 return;
             } else {
                 currentPosNavItemPopup++;
-                popupNavListDesigns.style.cssText = `transform: translateX(-${offsetNav*currentPosNavItemPopup}px);`;
+                popupNavListDesigns.style.cssText = `transform: translateX(-${offsetNavPopup*currentPosNavItemPopup}px);`;
             }
         }
         if (target.closest('#nav-arrow-popup-designs_left')) {
@@ -347,7 +347,7 @@ const sliderDesigns = () => {
                 return;
             } else {
                 currentPosNavItemPopup--;
-                popupNavListDesigns.style.cssText = `transform: translateX(-${offsetNav*currentPosNavItemPopup}px);`;
+                popupNavListDesigns.style.cssText = `transform: translateX(-${offsetNavPopup*currentPosNavItemPopup}px);`;
             }
         }
     });
