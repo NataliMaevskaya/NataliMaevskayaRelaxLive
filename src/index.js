@@ -23,6 +23,9 @@ import sliderTypesRepair from './modules/sliderTypesRepair';
 import sliderDesigns from './modules/sliderDesigns';
 import getRepairPriceListJSON from './modules/getRepairPriceListJSON';
 import portfolioSlider from './modules/portfolioSlider';
+import popupSliderFormulaHint from './modules/popupSliderFormulaHint';
+import popupSliderProblems from './modules/popupSliderProblems';
+
 
 
 getRepairPriceListJSON();
@@ -31,6 +34,8 @@ sliderDocs();
 sliderTypesRepair();
 sliderDesigns();
 portfolioSlider();
+popupSliderFormulaHint();
+popupSliderProblems();
 
 schemeTabs();
 maskPhone();
