@@ -6,7 +6,7 @@ const popupConsult = () => {
         popupConsult = document.querySelector('.popup-consultation'),
         form = popupConsult.querySelector('form');
         // form = document.getElementById('feedback6');
-        console.log(form);
+        // console.log(form);
 
     body.addEventListener('click', (event) => {
         let target = event.target;
