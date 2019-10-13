@@ -41,27 +41,31 @@ class SliderCarousel {
             this.controlSlider();
         }
 
-        if (this.responsive){
+        if (this.responsive) {
             this.responseInit();
         }
     }
 
     addGloClass() {
-        if (Object.keys(this.addClass).length !== 0) {        
-            const {mainClassName, wrapClassName, itemClassName} = this.addClass;
+        if (Object.keys(this.addClass).length !== 0) {
+            const {
+                mainClassName,
+                wrapClassName,
+                itemClassName
+            } = this.addClass;
             this.main.classList.add(mainClassName);
             this.wrap.classList.add(wrapClassName);
             for (const item of this.slides) {
                 item.classList.add(itemClassName);
             }
-            if(this.wrap.matches('.glo-reviews-slider__wrap')) {
+            if (this.wrap.matches('.glo-reviews-slider__wrap')) {
                 this.gloClassItemAddDelete('glo-reviews-slider__item', 0);
             }
-            
-        // console.log(mainClass);
-        // console.log(wrapClass);
-        // console.log(itemClass);
-        } 
+
+            // console.log(mainClass);
+            // console.log(wrapClass);
+            // console.log(itemClass);
+        }
     }
     gloClassItemAddDelete(itemClassName, index) {
         for (let i = 0; i < this.slides.length; i++) {
@@ -148,16 +152,16 @@ class SliderCarousel {
         const checkResponse = () => {
             const widthWindow = document.documentElement.clientWidth;
             if (widthWindow < maxResponse) {
-                for ( let i = 0; i < allResponse.length; i++) {
+                for (let i = 0; i < allResponse.length; i++) {
                     if (widthWindow < allResponse[i]) {
                         this.slidesToShow = this.responsive[i].slidesToShow;
                         widthSlideAddStyle();
-                    }               
+                    }
                 }
             } else {
                 this.slidesToShow = slidesToShowDefault;
                 widthSlideAddStyle();
-            }    
+            }
         };
 
         const widthSlideAddStyle = () => {

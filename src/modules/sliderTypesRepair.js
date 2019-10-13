@@ -13,14 +13,13 @@ const sliderTypesRepair = () => {
     let offsetNav,
         currentPosNavItem = 0,
         numNav;
-    // const navItemsLength = navItems.length;
+
     let widthWindow = document.documentElement.clientWidth;
     const checkResponse = () => {
         widthWindow = document.documentElement.clientWidth;
         if (widthWindow < 1025) {
             numNav = navListRepair.clientWidth / repairTypesNav.clientWidth - 1;
-            // if (numNav >= 0 && numNav < 1) {
-                if (numNav < 1) {
+            if (numNav < 1) {
                 numNav = 1;
             }
             offsetNav = repairTypesNav.clientWidth;
@@ -29,36 +28,33 @@ const sliderTypesRepair = () => {
     };
     checkResponse();
     window.addEventListener("resize", checkResponse);
-    // if (widthWindow < 1025) {
-        numNav = navListRepair.clientWidth / repairTypesNav.clientWidth - 1;
-        if (numNav < 1) {
-            numNav = 1;
+    numNav = navListRepair.clientWidth / repairTypesNav.clientWidth - 1;
+    if (numNav < 1) {
+        numNav = 1;
+    }
+    offsetNav = repairTypesNav.clientWidth;
+
+    navWrapRepair.addEventListener('click', (event) => {
+        let target = event.target;
+        if (target.closest('#nav-arrow-repair-right_base')) {
+            if (currentPosNavItem === Math.ceil(numNav)) {
+                return;
+            } else {
+
+                currentPosNavItem++;
+                navListRepair.style.cssText = `transform: translateX(-${offsetNav*currentPosNavItem}px);`;
+            }
         }
-        offsetNav = repairTypesNav.clientWidth;
-
-        // currentPosNavItem = 0;
-        navWrapRepair.addEventListener('click', (event) => {
-            let target = event.target;
-            if (target.closest('#nav-arrow-repair-right_base')) {
-                if (currentPosNavItem === Math.ceil(numNav)) {
-                    return;
-                } else {
-
-                    currentPosNavItem++;
-                    navListRepair.style.cssText = `transform: translateX(-${offsetNav*currentPosNavItem}px);`;
-                }
+        if (target.closest('#nav-arrow-repair-left_base')) {
+            if (currentPosNavItem === 0) {
+                return;
+            } else {
+                currentPosNavItem--;
+                navListRepair.style.cssText = `transform: translateX(-${offsetNav*currentPosNavItem}px);`;
             }
-            if (target.closest('#nav-arrow-repair-left_base')) {
-                if (currentPosNavItem === 0) {
-                    return;
-                } else {
-                    currentPosNavItem--;
-                    navListRepair.style.cssText = `transform: translateX(-${offsetNav*currentPosNavItem}px);`;
-                }
-            }
+        }
 
-        });
-    // }
+    });
 
     let currentSlider,
         currentSlides,
@@ -82,11 +78,8 @@ const sliderTypesRepair = () => {
             }
         });
         currentSlider = repairSliders[sliderIndex];
-        // console.log(repairSliders[sliderIndex]); 
         currentSlides = currentSlider.querySelectorAll('.repair-types-slider__slide');
-        // console.log('currentSlides: ', currentSlides);
         slidesLength = currentSlides.length;
-        // console.log('slidesLength: ', slidesLength);
         currentSlideIndex = 0;
         currentSlide.textContent = currentSlideIndex + 1;
         totalSlide.textContent = slidesLength;

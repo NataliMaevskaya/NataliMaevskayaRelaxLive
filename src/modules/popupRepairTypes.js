@@ -9,7 +9,7 @@ const popupRepairTypes = () => {
             if (popupDialogMenu.getAttribute('style')) {
                 popupDialogMenu.removeAttribute('style');
             }
-            popupRepairTypes.style.cssText = `visibility: visible !important`;  
+            popupRepairTypes.style.cssText = `visibility: visible !important`;
         }
         if (popupRepairTypes.getAttribute('style') && target.closest('.close')) {
             popupRepairTypes.removeAttribute('style');

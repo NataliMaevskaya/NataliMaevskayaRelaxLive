@@ -57,7 +57,7 @@ accordionQuestion();
 
 const partnersBlock = document.querySelector('.partners'),
     mainBlock = partnersBlock.querySelector('.wrapper');
-    mainBlock.classList.add('partners-main');
+mainBlock.classList.add('partners-main');
 const options = {
     main: '.partners-main',
     wrap: '.partners-slider',
@@ -71,20 +71,20 @@ const options = {
         itemClassName: 'glo-slider__item'
     },
 
-    responsive: [
+    responsive: [{
+            breakpoint: 1024,
+            slidesToShow: 3
+        },
         {
-        breakpoint: 1024,
-        slidesToShow: 3
-    },
-    {
-        breakpoint: 768,
-        slidesToShow: 2
-    },
-    {
-        breakpoint: 576,
-        slidesToShow: 1
-    }]
- };
+            breakpoint: 768,
+            slidesToShow: 2
+        },
+        {
+            breakpoint: 576,
+            slidesToShow: 1
+        }
+    ]
+};
 const carousel = new SliderCarousel(options);
 carousel.init();
 const options3 = {
@@ -96,12 +96,10 @@ const options3 = {
     infinity: true,
 
     addClass: {
-    mainClassName: 'glo-reviews-slider',
-    wrapClassName: 'glo-reviews-slider__wrap',
-    itemClassName: 'glo-reviews-slider__item'
+        mainClassName: 'glo-reviews-slider',
+        wrapClassName: 'glo-reviews-slider__wrap',
+        itemClassName: 'glo-reviews-slider__item'
     }
- };
+};
 const carousel3 = new SliderCarousel(options3);
 carousel3.init();
-
-

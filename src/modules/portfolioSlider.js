@@ -53,7 +53,7 @@ const portfolioSlider = () => {
             if (currentIndex === lastIndex - 1) {
                 portfolioArrowRight.style.display = 'none';
             }
-            if (currentIndex === 1) { // > 0
+            if (currentIndex === 1) { 
                 portfolioArrowLeft.style.display = 'flex';
             }
         }
@@ -82,7 +82,7 @@ const portfolioSlider = () => {
             if (currentIndex === lastIndex - 1) {
                 portfolioArrowMobileRight.style.display = 'none';
             }
-            if (currentIndex === 1) { // > 0
+            if (currentIndex === 1) { 
                 portfolioArrowMobileLeft.style.display = 'flex';
             }
         }

@@ -223,7 +223,6 @@ const sliderDesigns = () => {
                 textDesign.classList.remove('visible-content-block');
             }
         });
-        // console.log(popupDesignSliders);
         popupDesignSliders.forEach((popupSlider, i) => {
             if (i === popupSliderIndex) {
                 popupSlider.style.display = "flex";
@@ -270,8 +269,6 @@ const sliderDesigns = () => {
         let target = event.target;
         if (popupDesign.getAttribute("style") &&
             (target.closest(".close") || !target.closest(".popup-dialog-design"))) {
-                // popupDesign.style.visibility = 'hidden';
-                // popupNavListDesigns.style.visibility = 'hidden';
             popupDesign.removeAttribute('style');
             popupDesignSliders.forEach((popupSlider, i) => {
                 if (popupSlider.getAttribute('style')) {
@@ -284,7 +281,6 @@ const sliderDesigns = () => {
                     popupSlider.removeAttribute('style');
                 }
             });
-            // popupNavListDesigns.removeAttribute('style');
         }
         if (target.closest('#popup_design_right')) {
             popupCurrentSlides[popupCurrentSlideIndex].style.display = "none";

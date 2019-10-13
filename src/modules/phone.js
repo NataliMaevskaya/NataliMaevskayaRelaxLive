@@ -1,5 +1,5 @@
 const phone = () => {
-    
+
     const contactArrow = document.querySelector('.header-contacts__arrow');
     const imgArrow = contactArrow.querySelector('img');
     const headerContacts = document.querySelector('.header-contacts');
@@ -9,7 +9,7 @@ const phone = () => {
     headerContacts.addEventListener('click', (event) => {
         let target = event.target;
         if (target.closest('.header-contacts__arrow') || target.matches('.header-contacts__arrow')) {
-            if (accordA.style.opacity ==='') {
+            if (accordA.style.opacity === '') {
                 headerContactsAccord.style.cssText = `top: 30px !important;`;
                 accordA.style.cssText = `opacity: 100 !important;`;
                 imgArrow.style.cssText = `-webkit-transform: rotate(180deg) !important;
@@ -21,9 +21,9 @@ const phone = () => {
                 accordA.removeAttribute('style');
                 imgArrow.removeAttribute('style');
                 headerContactsAccord.removeAttribute('style');
-                
+
             }
-            
+
         }
     });
 

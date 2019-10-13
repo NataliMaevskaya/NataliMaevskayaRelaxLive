@@ -44,7 +44,6 @@ const sliderDocs = () => {
         sliderContentCurrent = popupTransparencySliderWrap.querySelector('.slider-counter-content__current'),
         sliderCounterTotal = popupTransparencySliderWrap.querySelector('.slider-counter-content__total');
 
-    // console.log(popupSlide);
     let currentPopupSlide;
     const popupSlideLength = popupSlide.length;
     const checkBoundaries = (currentSlide, length) => {
